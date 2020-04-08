@@ -6,8 +6,13 @@
 //  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
 //
 
-class {{ module_info.name }}Interactor: {{ module_info.name }}PresenterToInteractor {
+class {{ module_info.name }}Interactor {
 
     weak var presenter: {{ module_info.name }}InteractorToPresenter!
+
+}
+
+// MARK: - Presenter To Interactor
+extension {{ module_info.name }}Interactor: {{ module_info.name }}PresenterToInteractor {
 
 }

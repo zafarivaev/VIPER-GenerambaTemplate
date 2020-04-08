@@ -8,18 +8,21 @@
 
 import UIKit
 
-class {{ module_info.name }}ViewController: UIViewController, {{module_info.name}}PresenterToView {
+class {{ module_info.name }}ViewController: UIViewController {
 
     var presenter: {{ module_info.name }}ViewToPresenter!
 
-    // MARK: Life cycle
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewIsReady()
     }
+   
+}
 
-
-    // MARK: {{module_info.name}}PresenterToView
+// MARK: - Presenter To View
+extension {{ module_info.name }}ViewController: {{module_info.name}}PresenterToView {
     func setupInitialState() {
+
     }
 }

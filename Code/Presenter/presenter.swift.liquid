@@ -6,13 +6,23 @@
 //  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
 //
 
-class {{ module_info.name }}Presenter: {{ module_info.name }}ModuleInput, {{ module_info.name }}ViewToPresenter, {{ module_info.name }}InteractorToPresenter {
+class {{ module_info.name }}Presenter: {{ module_info.name }}ModuleInput {
 
     weak var view: {{ module_info.name }}PresenterToView!
     var interactor: {{ module_info.name }}PresenterToInteractor!
     var router: {{ module_info.name }}PresenterToRouter!
 
-    func viewIsReady() {
+}
 
+// MARK: - View To Presenter
+extension {{ module_info.name }}Presenter: {{ module_info.name }}ViewToPresenter {
+    func viewIsReady() {
+	view.setupInitialState()
     }
 }
+
+// MARK: - Interactor To Presenter
+extension {{ module_info.name }}Presenter: {{ module_info.name }}InteractorToPresenter {
+    
+}
+
